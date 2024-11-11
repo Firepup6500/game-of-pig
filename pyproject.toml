@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "game-of-pig"
+version = "0.0.1"
+description = "An implementation of the game of pig in python"
+authors = ["Firepup Sixfifty <firepyp650@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+firepup650 = "^1.0.44"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
