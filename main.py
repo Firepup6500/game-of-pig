@@ -60,7 +60,7 @@ def doRound(turn, canCheat, player, computer):
                     break
                 bank += res[0]
                 print(f"Computer rolled a {res[0]}, bank is now {bank}")
-                shouldRoll = fp.rint(0, 1)
+                shouldRoll = fp.randint(0, 1)
         if not shouldRoll:
             print(
                 f"Computer stopped rolling after {rollCounter} roll(s), bank was {bank} points{' (!! CHEAT !!)' if cheatFlag else ''}"
