@@ -51,7 +51,7 @@ def doRound(turn, canCheat, player, computer):
                 bank += res[1]
                 print(f"Computer roll {rollCounter}:")
                 print(f"Computer rolled a {res[1]}, bank is now {bank}")
-                shouldRoll = fp.randint(0, 1) if (bank+computer < 100) else 0
+                shouldRoll = fp.randint(0, 1) if (bank + computer < 100) else 0
             else:
                 rollCounter += 1
                 print(f"Computer roll {rollCounter}:")
@@ -60,7 +60,7 @@ def doRound(turn, canCheat, player, computer):
                     break
                 bank += res[0]
                 print(f"Computer rolled a {res[0]}, bank is now {bank}")
-                shouldRoll = fp.randint(0, 1) if (bank+computer < 100) else 0
+                shouldRoll = fp.randint(0, 1) if (bank + computer < 100) else 0
         if not shouldRoll:
             print(
                 f"Computer stopped rolling after {rollCounter} roll(s), bank was {bank} points{' (!! CHEAT !!)' if cheatFlag else ''}"
@@ -78,7 +78,11 @@ def doRound(turn, canCheat, player, computer):
                 break
             bank += res
             print(f"You rolled a {res}, bank is now {bank}")
-            shouldRoll = not fp.replitInput("Do you want to keep rolling? (Y|n)").lower().startswith("n")
+            shouldRoll = (
+                not fp.replitInput("Do you want to keep rolling? (Y|n)")
+                .lower()
+                .startswith("n")
+            )
         if not shouldRoll:
             print(
                 f"You stopped rolling after {rollCounter} roll(s), bank was {bank} points"
